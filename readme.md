@@ -6,4 +6,25 @@ cp ../lineage_wiki/_data/devices/*.yml devices/
 
 alas only codenames not real model names available....
 
+running 
+
+select codename from devices where battery_removable='True' and channels="['nightly']"
+
+will produce a list of all upto date devices with removable batteries
+
+klteduos
+klteactivexx
+kltekdi
+klte
+lentislte
+kltechnduo
+wt88047
+kltechn
+kltedv
+kccat6
+crackling
+kltekor
+FP2
+
+
 

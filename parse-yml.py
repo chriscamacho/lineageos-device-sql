@@ -225,7 +225,7 @@ for dev in devs:
 # TODO need to unpickle channels... (although all seem to be in a single channel)
 
 db.row_factory = sqlite3.Row
-cursor.execute('''select * from devices where battery_removable='True' and channels="['nightly']"''')
+cursor.execute('''select codename from devices where battery_removable='True' and channels="['nightly']"''')
 for row in cursor:
     # row['name'] returns the name column in the query, row['email'] returns email column.
     #print('{0} : {1}, {2}'.format(row['name'], row['email'], row['phone']))
