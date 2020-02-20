@@ -3,6 +3,7 @@ copy the current device yml files from
 cp ../lineage_wiki/_data/devices/*.yml devices/
 
 (assuming you've cloned the wiki 1 level higher)
+git clone https://github.com/LineageOS/lineage_wiki --depth=1
 
 alas only codenames not real model names available....
 

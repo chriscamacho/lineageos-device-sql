@@ -214,7 +214,8 @@ format_on_upgrade,
 uses_lineage_recovery,
 custom_recovery_codename text,
 custom_recovery_link text,
-no_fastboot_boot
+no_fastboot_boot,
+before_lineage_install
 )
 ''')
 db.commit()
@@ -228,14 +229,13 @@ for dev in devs:
     db.commit()
 
 
-# TODO need to unpickle channels... (although all seem to be in a single channel)
 
-db.row_factory = sqlite3.Row
-cursor.execute('''select codename from devices where battery_removable='True' and channels="['nightly']"''')
-for row in cursor:
+#db.row_factory = sqlite3.Row
+#cursor.execute('''select codename,versions from devices where battery_removable='True' and channels="['nightly']"''')
+#for row in cursor:
     # row['name'] returns the name column in the query, row['email'] returns email column.
     #print('{0} : {1}, {2}'.format(row['name'], row['email'], row['phone']))
-    print(row)
+#    print(row)
 
 db.close()
 
