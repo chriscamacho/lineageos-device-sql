@@ -6,11 +6,12 @@ import yaml
 import os
 import sqlite3
 import re
+import sys
 
 def deviceNumFields(fileName):
     with open(fileName, 'r') as stream:
         try:
-            dev = yaml.load(stream)
+            dev = yaml.load(stream, Loader=yaml.FullLoader)
             return len(dev)
         except yaml.YAMLError as exc:
             return -1
@@ -18,7 +19,7 @@ def deviceNumFields(fileName):
 def deviceFromYML(fileName):
     with open(fileName, 'r') as stream:
         try:
-            dev = yaml.load(stream)
+            dev = yaml.load(stream, Loader=yaml.FullLoader)
             return dev
         except yaml.YAMLError as exc:
             return exc
@@ -77,7 +78,7 @@ def deviceToSqlInsert(fileName):
                             if n=='tech':
                                 fieldname='network'+nvl[n]
                             if n=='bands':
-                                print(fieldname+'='+nvl[n])
+                                #print(fieldname+'='+nvl[n])
                                 fields[fieldname]=nvl[n]
                     # use network2G, network3G and network4G
                     fieldProcessed = True
@@ -227,7 +228,9 @@ for dev in devs:
     cursor.execute(sql)
     #print("------------------------------------")
     db.commit()
-
+    print(".", end="")
+    sys.stdout.flush()
+print()
 
 
 #db.row_factory = sqlite3.Row
