@@ -216,7 +216,8 @@ uses_lineage_recovery,
 custom_recovery_codename text,
 custom_recovery_link text,
 no_fastboot_boot,
-before_lineage_install
+before_lineage_install,
+before_dd_recovery
 )
 ''')
 db.commit()
@@ -232,19 +233,8 @@ for dev in devs:
     sys.stdout.flush()
 print()
 
-
-#db.row_factory = sqlite3.Row
-#cursor.execute('''select codename,versions from devices where battery_removable='True' and channels="['nightly']"''')
-#for row in cursor:
-    # row['name'] returns the name column in the query, row['email'] returns email column.
-    #print('{0} : {1}, {2}'.format(row['name'], row['email'], row['phone']))
-#    print(row)
+print("the sqlite db should now be ready for use.")
 
 db.close()
-
-#dev='devices/tsubasa.yml'
-#print(deviceToSqlInsert(dev))
-#dev='devices/i9300.yml'
-#print(deviceToSqlInsert(dev))
 
 

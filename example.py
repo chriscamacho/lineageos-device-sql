@@ -8,7 +8,8 @@ db = sqlite3.connect('devices.sqlite')
 cursor = db.cursor()
 
 db.row_factory = sqlite3.Row
-cursor.execute('''select codename from devices where battery_removable='True' and channels="['nightly']"''')
+#cursor.execute('''select codename from devices where battery_removable='True' and channels="['nightly']"''')
+cursor.execute('''select codename from devices where battery_removable='True' and channels like "%'nightly'%"''')
 #cursor.execute('''select codename,versions from devices where versions like "%17%"  ''')
 for row in cursor:
     # row['name'] returns the name column in the query, row['email'] returns email column.
