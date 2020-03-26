@@ -217,7 +217,8 @@ custom_recovery_codename text,
 custom_recovery_link text,
 no_fastboot_boot,
 before_lineage_install,
-before_dd_recovery
+before_dd_recovery,
+uses_twrp
 )
 ''')
 db.commit()
