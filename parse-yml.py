@@ -246,6 +246,7 @@ is_retrofit_dynamic_partitions text,
 needs_fastboot_boot text,
 migrate_to text,
 migrated_to text,
+has_no_usb text,
 flash_codename text,
 flash_download_instructions text,
 flash_extract_instructions text
