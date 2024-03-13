@@ -82,6 +82,14 @@ def deviceToSqlInsert(fileName):
                                 fields[fieldname]=nvl[n]
                     # use network2G, network3G and network4G
                     fieldProcessed = True
+
+        if attr=='dimensions':
+            continue
+        if attr=='screen':
+            continue
+        if attr=='quirks':
+            continue
+
         if not fieldProcessed:
             fields[attr]=value
 
@@ -147,6 +155,14 @@ cam1flash text,
 cam1info text,
 cam2flash text,
 cam2info text,
+cam3flash text,
+cam3info text,
+cam4flash text,
+cam4info text,
+cam5flash text,
+cam5info text,
+cam6flash text,
+cam6info text,
 carrier text,
 channels text,
 codename text,
@@ -210,15 +226,29 @@ edl_boot text,
 install_recovery_guide text,
 project_spectrum_recovery text,
 required_bootloader_link text,
-multiple_versions_reason,
-format_on_upgrade,
-uses_lineage_recovery,
+multiple_versions_reason text,
+format_on_upgrade text,
+uses_lineage_recovery text,
 custom_recovery_codename text,
 custom_recovery_link text,
-no_fastboot_boot,
-before_lineage_install,
-before_dd_recovery,
-uses_twrp
+no_fastboot_boot text,
+before_lineage_install text,
+before_dd_recovery text,
+uses_twrp text,
+quirks text,
+recovery_partition_name text,
+before_recovery_install text,
+firmware_update text,
+variant text,
+recovery_reboot text,
+before_install_device_variants text,
+is_retrofit_dynamic_partitions text,
+needs_fastboot_boot text,
+migrate_to text,
+migrated_to text,
+flash_codename text,
+flash_download_instructions text,
+flash_extract_instructions text
 )
 ''')
 db.commit()
